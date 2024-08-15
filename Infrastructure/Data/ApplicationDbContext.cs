@@ -4,7 +4,7 @@ using Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Infrastructure.Data
+namespace Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
@@ -27,7 +27,5 @@ namespace Application.Infrastructure.Data
 
             base.OnModelCreating(modelBuilder);
         }
-    }
-
-    
+    }    
 }

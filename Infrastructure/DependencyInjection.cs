@@ -1,8 +1,8 @@
 using Application.Common.Interfaces;
-using Application.Infrastructure.Data;
 using Ardalis.GuardClauses;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Infrastructure.Data;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
