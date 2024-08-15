@@ -1,9 +1,12 @@
+using Domain.Common;
+
 namespace Domain.Entities
 {
-    public class Role
+    public class Role : BaseEntity
     {
         public Guid RoleId { get; init; }
         public string Name { get; set; } = string.Empty;
-        public List<Permission> Permissions { get; set; } = new();
+        public ICollection<Permission> Permissions { get; set; } = [];
+        public ICollection<User> Users { get; set; } = [];
     }
 }
