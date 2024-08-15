@@ -1,5 +1,6 @@
 using MediatR;
 using Api.Endpoints.Common;
+using Application.Users.Commands.CreateUser;
 
 namespace Api.Endpoints;
 
