@@ -17,15 +17,12 @@ namespace Microsoft.Extensions.DependencyInjection
                 message: "Connection string 'DefaultConnection' not found."
             );
 
-            services.AddDbContext<ApplicationDbContext>(
-                (sp, options) => 
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
+            services.AddDbContext<ApplicationDbContext>((options) => 
                 {
                     options.UseNpgsql(connectionString);
                 }
-            );
-
-            services.AddScoped<IApplicationDbContext>(provider =>
-                provider.GetRequiredService<ApplicationDbContext>()
             );
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

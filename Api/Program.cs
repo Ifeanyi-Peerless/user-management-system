@@ -1,5 +1,7 @@
 using  Api.Infrastructure;
 using Api.Endpoints.Common;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,5 +27,6 @@ app.UseEndpointDefinitions();
 app.UseCors("corsapp");
 
 app.UseHttpsRedirection();
+
 
 app.Run();
