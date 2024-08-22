@@ -4,20 +4,13 @@ using Infrastructure.Data;
 using Microsoft.Extensions.Configuration;
 using Ardalis.GuardClauses;
 
-public class ApplicationDbContextFactory(IConfiguration configuration) : IDesignTimeDbContextFactory<ApplicationDbContext>
+public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
 {
     public ApplicationDbContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-
-        Guard.Against.Null(
-            connectionString,
-            message: "Connection string 'DefaultConnection' not found."
-        );
-
-        optionsBuilder.UseNpgsql(connectionString);
+        optionsBuilder.UseNpgsql("Server=localhost;Port=5432;Database=users-db;User Id=postgres;Password=postgres");
 
         return new ApplicationDbContext(optionsBuilder.Options);
     }

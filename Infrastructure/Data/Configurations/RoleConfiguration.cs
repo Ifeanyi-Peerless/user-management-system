@@ -70,13 +70,7 @@ namespace Infrastructure.Data.Configurations
                 .HasColumnType("date")
                 .HasColumnName("DATE_DELETED")
                 .IsRequired(false);
-            builder
-                .Property(t => t.LastModifiedTime)
-                .HasColumnName("LAST_MODIFIED_TIME")
-                .IsRequired(false);
-            builder.Property(t => t.TimeApproved).HasColumnName("TIME_APPROVED").IsRequired(false);
-            builder.Property(t => t.TimeCreated).HasColumnName("TIME_CREATED").IsRequired();
-            builder.Property(t => t.TimeDeleted).HasColumnName("TIME_DELETED").IsRequired(false);
+
             builder.ToTable("Roles");
         }
     }
